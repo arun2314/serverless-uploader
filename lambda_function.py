@@ -11,6 +11,7 @@ table_name = 'FileMetadata'        # We will create this table in Step 3
 
 def lambda_handler(event, context):
     try:
+        print("Jenkins is working — new deployment confirmed!")
         # Read file from API body (base64 encoded)
         file_content = base64.b64decode(event['body'])
 
