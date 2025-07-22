@@ -69,3 +69,6 @@ https://your-api-url.execute-api.your-region.amazonaws.com
 - **CI/CD**: Jenkins ensures fast and reliable deployments.
 - **Simple**: Easy to test and extend.
 
+## Project Demo Video
+Watch the demo video [here](https://drive.google.com/your-video-link).
+
