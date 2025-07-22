@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    environment {
+        AWS_ACCESS_KEY_ID = 'YOUR-AWS-ACCESS-KEY'
+        AWS_SECRET_ACCESS_KEY = 'YOUR-AWS-SECRET-ACCESS-KEY'
+        AWS_DEFAULT_REGION = 'YOUR-AWS-LAMBDA-REGION'
+        FUNCTION_NAME = 'YOUR-AWS-LAMBDA-FUNCTION-NAME'
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/arun2314/serverless-uploader.git'
+            }
+        }
+
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -f function.zip'
+            }
+        }
+
+        stage('Zip Lambda Code') {
+            steps {
+                sh '''
+                    ls -la
+                    zip -r function.zip lambda_function.py
+                '''
+            }
+        }
+
+        stage('Deploy to Lambda') {
+            steps {
+                sh '''
+                    aws lambda update-function-code \
+                        --function-name $FUNCTION_NAME \
+                        --zip-file fileb://function.zip
+                '''
+            }
+        }
+    }
+}
+
