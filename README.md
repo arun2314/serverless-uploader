@@ -7,6 +7,17 @@ Users can upload files through an API. Uploaded files go to an **S3 bucket**, an
 
 ---
 
+## Use of This Project
+
+This project demonstrates how to build a **fully automated serverless file storage system** with CI/CD. It is useful for:
+
+- **Learning Serverless Architecture**: Understand how AWS Lambda, API Gateway, S3, and DynamoDB work together.
+- **Practicing CI/CD**: Gain hands-on experience setting up Jenkins pipelines that automatically deploy Lambda functions.
+- **Building Scalable Storage Solutions**: Store and manage files without managing servers.
+- **Portfolio Project**: Showcase real-world DevOps and cloud skills to employers.
+- **Rapid Prototyping**: Quickly build backend file storage for apps without worrying about infrastructure.
+
+
 ## Architecture
 - **Postman Client** sends files via HTTP POST.
 - **API Gateway** triggers the **uploadFileHandler** Lambda function.
