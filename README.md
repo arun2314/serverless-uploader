@@ -70,5 +70,5 @@ https://your-api-url.execute-api.your-region.amazonaws.com
 - **Simple**: Easy to test and extend.
 
 ## Project Demo Video
-Watch the demo video [here](https://drive.google.com/your-video-link).
+Watch the demo video [here](https://drive.google.com/file/d/1WHJtg2ZovImKvos-OUjk7vhQUD_FwIlS/view?usp=drivesdk).
 
